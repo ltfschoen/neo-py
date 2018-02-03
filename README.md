@@ -1,4 +1,3 @@
-
 ---
 NEO-PY
 ---
@@ -6,16 +5,15 @@ NEO-PY
 # Table of Contents
   * [Purpose](#chapter-0)
 
-
 ## Purpose <a id="chapter-0"></a>
 
 ## References <a id="chapter-1000"></a>
 
-* [ ] - [NEO White Paper](http://docs.neo.org/en-us/index.html)
+* [X] - [NEO White Paper](http://docs.neo.org/en-us/index.html)
   * Digital Asset Types with NEO
     * Global Assets - recorded in system space and identifiable by all smart contracts and clients
     * Contract Assets - recorded in the private storage area of a smart contract, may adhere to certain standards, and require a compatible client to be recognised
-  * [ ] - Digital Identity
+  * [X] - Digital Identity
     * Digital Identity Definition - Electronic identity of entities
     * Digital Identity with NEO
       * Goal - Implement set of X.509 compatible Digital Identity Standards
@@ -66,19 +64,53 @@ NEO-PY
       * On-Chain Governanece - NEO token holders are network owners, managing the network through voting and using GAS (generated from NEO) to utilise network functions
       * Off-Chain Governance - NEO Council comprises founding members, management and technical committees, and secretariat, who are responsible for Strategic and Technical Decision-Making, and responsible to the NEO Community for NEO Ecosystem promotion and development
 
-  * [ ] - NEO Technology Implementation
-    * Consensus Mechanism is Delegate Byzantine Fault Tolerant (dBFT)
-      * dBFT
-        * Definition - BFT consensus mechanism enabling participation in consensus through proxy voting at large scale in the network and continues in real-time without a fixed-term 
-        * Process - 
-          * Voting for Bookkepers by NEO token holders voting for those they support
-          * Selected Bookkeepers reach consensus and generate New Blocks using a BFT algorithm
-        * Security and Availability
-          * Fault Tolerance - `f = (n - 1) / 3` for Consensus System with `n` Consensus Nodes
-            * Resistant - resistant to general Byzantine failures and suitable for any network environment
-            * Finality - prevents transactions from being revoked or rolled back after confirmations are finalised in a block
-        * Performance
-          * TODO
+  * [X] - NEO Technology Implementation
+    * **dBFT** Consensus Mechanism is Delegate Byzantine Fault Tolerant (dBFT)
+      * Definition - BFT consensus mechanism enabling participation in consensus through proxy voting at large scale in the network and continues in real-time without a fixed-term 
+      * Process - 
+        * Voting for Bookkepers by NEO token holders voting for those they support
+        * Selected Bookkeepers reach consensus and generate New Blocks using a BFT algorithm
+      * Security and Availability
+        * Fault Tolerance - `f = (n - 1) / 3` for Consensus System with `n` Consensus Nodes
+          * Resistant - resistant to general Byzantine failures and suitable for any network environment
+          * Finality - prevents transactions from being revoked or rolled back after confirmations are finalised in a block
+      * Performance
+        * Throughput (Actual) - up to 1,000 TPS (transactions per second)
+        * Throughput (Potential) - up to 10,000 TPS, through Optimisation
+      * Digital Identity
+        * Compliant financial assets may be registered on the NEO network
+        * Individuals or institutional bookkeeper smay use their real name
+        * Judicial decisions may freeze, revoke, inherit, retrieve, or transfer ownership
+    * **NeoContract** Smart Contract System
+      * **NeoVM** Universal Blockchain Virtual Machine
+        * Lightweight VM (similar to JVM and .NET runtime) with virtual CPU that is suitable for reading/executing smart contract instructions sequentially, and may be ported to non-blockchain systems, and extended with a JIT (real-time compiler) mechanism
+      * **InteropService** Interoperable Services
+        * Service VMs that load the blockchain ledger, digital assets, digital identity, persistent storage area, NeoFS (similar to IPFS), and other services
+        * Service VMs may be accessed by Smart Contracts at runtime
+        * Low-Coupling Design allows NeoVM to be ported and used with any blockchain or non-blockchain system to increase Smart Contract utility
+      * **DevPack** High-level Language Compiler and IDE Plugin
+        * DevPack Compilers can compile Smart Contracts written in Java/Kotlin and C# into NeoVM instructions using fimiliar IDEs
+        * Static Analyis may be used to create a Smart Contract Call Tree that the NEO Node may dynamically fragment to achieve expansion and overcome the "jamming effect" of blockchain systems
+    * **NeoX** Cross-Chain Interoperability Agreement (Protocol)
+      * Definition - NeoX is a Protocol that implements Cross-Chain Interoperability and makes Cross-Chain Collaborations and Cross-Chain Smart Contract Applications possible as it allows for Cross-Chain Smart Contracts to perform different parts across multiple chains and either succeeding or reverting as a whole. Similar concept to Polkadot.
+      * **Cross-Chain Assets Exchange Agreement**
+        * **NeoContract** function used to create a Contract Account for each Participant.
+        * **NeoX** allows Multiple Participants to exchange assets across different chains, where Multiple Steps of a Transaction succeed or fail together
+        * **NeoX** allows other blockchains to Participate through being compatible with **NeoContract** and providing simple Smart Contract functionality
+      * **Cross-Chain Distributed Transaction Protocol**
+        * **Cross-Chain Distributed Transactions** mean Multiple Steps of a Transaction are scattered across different blockchains with transaction consistency
+    * **NeoFS** Distributed Storage Protocol
+      * Definition
+        * NeoFS is an InteropService of the NeoContract system that enables Smart Contracts to store large files on the blockchain and set file access privileges.
+        * NeoFS may be combined with Digital Identity for assigning, sending, and revoking Digital Certificates without a central server.
+        * NeoFS may store Old Block Data instead of on Full Nodes in future to increase scalability 
+        * NeoFS uses Distributed Hash Table (DHT) technology by indexing data through file content (Hash) and dividing large files into fixed-size data blocks that are distributed and stored across different NEO Nodes.
+      * Redundancy and Reliability Trade-off
+        * Token incentives
+        * Backbone Nodes - provide services for files with user-defined requirements of Stability and High Reliability
+        * Other Nodes - files with user-defined Low Reliability requirements may be stored and accessed almost for free
+    * **NeoQS** (Quantum Safe) Anti-Quantum Cryptography Mechanism
+      * Definition - Lattice-based cryptographic mechanism intended to stop the NEO blockchain from being compromised by quantum computers
 
 * [X] - [Neo Smart Contracts 2.0](http://docs.neo.org/en-us/sc/introduction.html)
   * Contract Types
@@ -96,4 +128,5 @@ NEO-PY
     * Debugging at NeoVM level
     * TestNet GAS provided for development
 
-* [ ] - [NeoContract White Paper](http://docs.neo.org/en-us/index.html)
+* [X] - [NeoContract White Paper](http://docs.neo.org/en-us/index.html)
+* [ ] - [NEO Enhancement Proposals (NEP)](https://github.com/neo-project/proposals)
