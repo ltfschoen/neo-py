@@ -4,10 +4,52 @@ NEO-PY
 
 # Table of Contents
   * [Purpose](#chapter-0)
+  * [NEO Development](#chapter-10)
+  * [NEO Documentation Summary](#chapter-1000)
+  * [NEO References](#chapter-1100)
 
 ## Purpose <a id="chapter-0"></a>
 
-## References <a id="chapter-1000"></a>
+Learning about the NEO blockchain by summarising their documentation and following their Python development guides
+
+## NEO Development <a id="chapter-10"></a>
+
+### NEO Smart Contracts
+
+* Smart Contracts
+  * Definition - Agreement by contract participants to fulfill a digital commitment. They are deployed on a decentralised and immutable blockchain to improve the efficiency of traditional social structure.
+
+* NEO Smart Contract 2.0
+  * Contract Types
+    * Validation Contracts
+    * Function Contracts
+    * Application Contracts
+  * Communication
+    * Smart Contract is executed in the NeoVM and uses the Interactive Service Layer to communicates with the outside
+  * Upgrades
+    * API of the Interactive Service Layer may be used to Upgrade the Smart Contract Function
+
+* NEO Python **neo-python**
+  * Definition
+    * Python-based P2P Node and SDK for the NEO blockchain
+    * Interactive CLI to Configure/Inspect the Node
+    * NEO Smart Contracts (in `.avm` format)
+      * Compiling, Testing, Deploying, and Running
+      * Event Monitoring with `Runtime.Log` and `Runtime.Notify`
+    * Wallet functionality is NEP2 (Passphrase-protected private key) and NEP5 (Token Standard) Compliant
+    * RPC Client
+
+### [NEO Nodes (Private Chains) and API/SDK Interaction](http://docs.neo.org/en-us/node/introduction.html)
+
+* **Full-Nodes** store the whole blockchain and are connected to it through a P2P network. All nodes in the blockchain network are equal and act both as Client Interface and Server. Nodes API may be accessed via [Ports](http://docs.neo.org/en-us/node/introduction.html#port-description). [Comparison of Neo-GUI and Neo-CLI](http://docs.neo.org/en-us/node/introduction.html#comparison-of-gui-node-and-cli-node-functions).
+  * **Programs**
+    * **Neo-GUI** is a GUI intended for Neo Users
+    * **Neo-CLI** provides External API for basic Wallet functions, helps other Nodes reach Consensus in the Network to generate New Blocks, and is intended for NEO Developers.
+      * Note: [NEO Network Protocol](http://docs.neo.org/en-us/node/network-protocol.html#network-message) will provide a Low-level API for transaction types not currently supported by Neo-CLI (i.e. claiming GAS, sending NEO without an open Wallet).
+
+* TODO - In Progress
+
+## NEO Documentation Summary <a id="chapter-1000"></a>
 
 * [X] - [NEO White Paper](http://docs.neo.org/en-us/index.html)
   * Digital Asset Types with NEO
@@ -84,6 +126,10 @@ NEO-PY
     * **NeoContract** Smart Contract System
       * **NeoVM** Universal Blockchain Virtual Machine
         * Lightweight VM (similar to JVM and .NET runtime) with virtual CPU that is suitable for reading/executing smart contract instructions sequentially, and may be ported to non-blockchain systems, and extended with a JIT (real-time compiler) mechanism
+        * [NeoVM System Architecture](http://docs.neo.org/en-us/sc/tutorial.html#neovm)
+
+        ![alt text](http://docs.neo.org/assets/neo-vm.jpg "NeoVM System Architecture Diagram")
+
       * **InteropService** Interoperable Services
         * Service VMs that load the blockchain ledger, digital assets, digital identity, persistent storage area, NeoFS (similar to IPFS), and other services
         * Service VMs may be accessed by Smart Contracts at runtime
@@ -130,3 +176,7 @@ NEO-PY
 
 * [X] - [NeoContract White Paper](http://docs.neo.org/en-us/index.html)
 * [ ] - [NEO Enhancement Proposals (NEP)](https://github.com/neo-project/proposals)
+
+## NEO References <a id="chapter-1100"></a>
+
+* [City Of Zion](https://github.com/CityOfZion)
